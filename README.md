@@ -1,6 +1,6 @@
 # Move and Groove
 
-I designed and built this full-stack application as project 6 for the OpenClassrooms Full Stack Developer path. For the back-end I use Ruby on Rails and Devise. For the front-end I use HTML, Tailwind CSS, and TypeScript.
+I designed and built this full-stack application as project 6 for the OpenClassrooms Full Stack Developer path. For the back-end I use Ruby, Ruby on Rails, and Devise. For the front-end I use HTML, Tailwind CSS, and TypeScript.
 
 Move and Groove is a fitness tracking app that allows users to sign up and log activities of different kinds.
 
@@ -36,12 +36,6 @@ Download the frontend dependencies with these commands:
 
 ```bash
 cd front
-TBD
-```
-
-Launch React with the following command:
-
-```bash
 TBD
 ```
 
