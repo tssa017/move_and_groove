@@ -1,24 +1,74 @@
-# README
+# Move and Groove
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I designed and built this full-stack application as project 6 for the OpenClassrooms Full Stack Developer path. For the back-end I use Node, Ruby, Ruby on Rails, and Devise. For the front-end I use HTML, Tailwind CSS, and TypeScript.
 
-Things you may want to cover:
+Move and Groove is a fitness tracking app that allows users to sign up and log activities of different kinds 🏊‍♀️
 
-* Ruby version
+## Installation
 
-* System dependencies
+Clone and access the project using the following commands:
 
-* Configuration
+```bash
+git clone git@github.com:tssa017/move_and_groove.git
+cd move_and_groove
+```
 
-* Database creation
+### Back-end
 
-* Database initialization
+1. Ensure you have the latest version of [Rails](https://guides.rubyonrails.org/v5.1/getting_started.html) installed
 
-* How to run the test suite
+2. Ensure you have the latest version of Node installed, you can use the following command:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+node -v
+```
 
-* Deployment instructions
+2. Run the following commands to install the Ruby gems (dependencies) specified in the Gemfile:
 
-* ...
+```bash
+cd back
+bundle install
+```
+
+3. Setup the database with the following commands:
+
+```bash
+rails db:create
+rails db:migrate
+```
+
+4. Download the back end dependencies with Node:
+
+```bash
+npm install
+```
+
+5. Launch the default `development` server and view at `http://localhost:3000` with the following command:
+
+```bash
+rails server
+```
+
+6. Launch the `production` server and view at `________` with this command:
+
+```bash
+rails server -e production
+```
+
+### Front-end TBD
+
+In another terminal,
+
+Download the frontend dependencies with these commands:
+
+```bash
+cd front
+TBD
+```
+
+Enjoy the platform! 🚀
+
+### Resources
+
+-   [Rails docs](https://guides.rubyonrails.org/)
+-   [Project descriptiom](https://openclassrooms.com/fr/paths/509/projects/241/assignment)

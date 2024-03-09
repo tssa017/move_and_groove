@@ -1,0 +1,29 @@
+<h2 class="py-4 px-6 font-semibold">Welcome <%= current_user.first_name %></h2>
+<h3 class="py-4 px-6 font-semibold" >My activities</h3>
+
+<ul class="py-4 px-6">
+  <% @activity_logs.each do |activity_log| %>
+    <li>
+      <div class="py-4 px-6 shadow-md">
+        <% if activity_log.activity.present? %>
+          <strong>Title:</strong> <%= activity_log.activity.title %><br>
+        <% else %>
+          <strong>Title:</strong> No associated activity<br>
+        <% end %>
+        <strong>Date:</strong> <%= activity_log.date %><br>
+        <% if activity_log.activity.present? && activity_log.activity.is_duration_based? %>
+          <strong>Duration:</strong> <%= activity_log.duration %> minutes<br>
+        <% elsif activity_log.activity.present? && !activity_log.activity.is_duration_based? %>
+          <strong>Number of Reps:</strong> <%= activity_log.repetitions %><br>
+        <% end %>
+        <strong>Notes:</strong> <%= activity_log.notes %><br>
+
+        <!-- Link to edit activity log -->
+        <%= link_to "Edit", edit_activity_log_path(activity_log), class: "py-6 font-semibold" %>
+        <%= link_to "Delete", activity_log_path(activity_log), method: :delete, data: { confirm: "Are you sure you want to delete this activity log?" }, class: "text-red-500 hover:text-red-700 ml-2 font-semibold" %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Log new activity!", new_activity_log_path, class: "py-4 px-6 font-semibold" %>

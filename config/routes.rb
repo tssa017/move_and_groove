@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: { registrations: 'registrations' }
+  root 'activity_logs#index'
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  get 'user_info', to: 'user_info#show'
+
+  resources :activity_logs 
+
+  resources :activities do
+    get 'get_activity_type', on: :member
+  end
+
+  # Route to about page
+  get 'about', to: 'about#index'
+
+  # Route to media page
+  get 'media', to: 'media#index'
 end

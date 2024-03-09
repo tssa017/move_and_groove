@@ -1,0 +1,21 @@
+<h1>Activity Log Details</h1>
+
+<% if @activity_log.activity.present? %>
+<strong>Title:</strong> <%= @activity_log.activity.title %><br>
+<% else %>
+<strong>Title:</strong> No associated activity<br>
+<% end %>
+<p><strong>Date:</strong> <%= @activity_log.date %></p>
+<p><strong>Duration:</strong> <%= @activity_log.duration %> minutes</p>
+<p><strong>Repetitions:</strong> <%= @activity_log.repetitions %></p>
+<p><strong>Notes:</strong> <%= @activity_log.notes %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_activity_log_path(@activity_log) %></li>
+  <li><%= link_to "Destroy", activity_log_path(@activity_log), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+<%= link_to "Back", root_path %>

@@ -1,0 +1,36 @@
+<h1>Edit Activity Log</h1>
+
+<%= form_with(model: @activity_log, local: true) do |form| %>
+  <% if @activity_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@activity_log.errors.count, "error") %> prohibited this activity log from being saved:</h2>
+
+      <ul>
+      <% @activity_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.text_field :duration, autofocus: true, tabindex: '1'  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :repetitions %>
+    <%= form.text_field :repetitions, tabindex: '2' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_area :notes, tabindex: '3' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Update Activity Log', tabindex: '4' %>
+  </div>
+<% end %>
+
+<%= link_to 'Cancel', root_path %>

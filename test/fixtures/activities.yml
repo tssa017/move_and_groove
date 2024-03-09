@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  activity_id: 1
+  title: MyString
+  type_of_activity: 1
+  img: MyString
+  is_custom: false
+
+two:
+  activity_id: 1
+  title: MyString
+  type_of_activity: 1
+  img: MyString
+  is_custom: false
