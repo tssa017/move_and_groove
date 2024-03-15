@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag "application", "inter-font", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-white text-gray-800 font-sans md-shadow">
     <header class="py-4 px-6 bg-pink-100 border-b-4">
         <% if user_signed_in? %>
             <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'visited text-blue-600 hover:text-green-800 font-semibold' %>

@@ -1,10 +1,10 @@
 <h2 class="py-4 px-6 font-semibold">Welcome <%= current_user.first_name %></h2>
-<h3 class="py-4 px-6 font-semibold" >My activities</h3>
+<h3 class="py-4 px-6 font-semibold">My activities</h3>
 
 <ul class="py-4 px-6">
   <% @activity_logs.each do |activity_log| %>
     <li>
-      <div class="py-4 px-6 shadow-md">
+      <div class="bg-white rounded-lg shadow-md p-6 mb-6">
         <% if activity_log.activity.present? %>
           <strong>Title:</strong> <%= activity_log.activity.title %><br>
         <% else %>
@@ -26,4 +26,4 @@
   <% end %>
 </ul>
 
-<%= link_to "Log new activity!", new_activity_log_path, class: "py-4 px-6 font-semibold" %>
+<%= link_to "Log new activity!", new_activity_log_path, class: "py-4 px-6 font-semibold bg-green-500 text-white rounded-md hover:bg-green-600" %>
