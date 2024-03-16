@@ -25,13 +25,13 @@
 
     <%= yield %>
 
-    <footer class="py-8 px-6 bg-green-500">
+    <footer class="py-8 px-6 bg-green-500 flex-wrap">
         <%= link_to 'Edit Profile', edit_user_registration_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(edit_user_registration_path) ? ' text-green-600' : '') %>
         <%= link_to "View Profile", user_info_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(user_info_path) ? ' text-green-600' : '') %>
         <%= link_to "Home", root_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(root_path) ? ' text-green-600' : '') %>
         <%= link_to "About", about_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(about_path) ? ' text-green-600' : '') %>
         <%= link_to "Media", media_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(media_path) ? ' text-green-600' : '') %>
-        <img src="./../../../public/img/move_and_groove.jpg" alt="Move and Groove logo">
+        <img src="/apple-touch-icon.png" alt="Move and Groove logo">
     </footer>
 </body>
 </html>
