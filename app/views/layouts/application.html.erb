@@ -26,12 +26,19 @@
     <%= yield %>
 
     <footer class="py-8 px-6 bg-green-500 flex-wrap">
-        <%= link_to 'Edit Profile', edit_user_registration_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(edit_user_registration_path) ? ' text-green-600' : '') %>
-        <%= link_to "View Profile", user_info_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(user_info_path) ? ' text-green-600' : '') %>
-        <%= link_to "Home", root_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(root_path) ? ' text-green-600' : '') %>
-        <%= link_to "About", about_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(about_path) ? ' text-green-600' : '') %>
-        <%= link_to "Media", media_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(media_path) ? ' text-green-600' : '') %>
-        <img src="/apple-touch-icon.png" alt="Move and Groove logo">
+        <% if user_signed_in? %>
+            <%= link_to 'Edit Profile', edit_user_registration_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(edit_user_registration_path) ? ' text-green-600' : '') %>
+            <%= link_to "View Profile", user_info_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(user_info_path) ? ' text-green-600' : '') %>
+            <%= link_to "Home", root_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(root_path) ? ' text-green-600' : '') %>
+            <%= link_to "About", about_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(about_path) ? ' text-green-600' : '') %>
+            <%= link_to "Media", media_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(media_path) ? ' text-green-600' : '') %>
+            <img src="/apple-touch-icon.png" alt="Move and Groove logo">
+        <% else %>
+            <%= link_to 'Sign in', new_user_session_path, class: 'visited hover:text-green-800 hover:text-lg' + (current_page?(new_user_session_path) ? ' text-green-600' : '') %>
+            <%= link_to "About", about_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(about_path) ? ' text-green-600' : '') %>
+            <%= link_to "Media", media_path, class: 'visited hover:text-green-800 font-semibold' + (current_page?(media_path) ? ' text-green-600' : '') %>
+            <img src="/apple-touch-icon.png" alt="Move and Groove logo">
+        <% end %>
     </footer>
 </body>
 </html>
