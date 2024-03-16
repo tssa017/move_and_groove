@@ -72,20 +72,6 @@ abbr:where([title]) {
 }
 
 /*
-Remove the default font size and weight for headings.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: inherit;
-    font-weight: inherit;
-}
-
-/*
 Reset links to optimize for opt-in styling instead of opt-out.
 */
 
@@ -509,37 +495,25 @@ video {
         scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-/* Theme */
 .border-b-4 {
     border-bottom-width: 4px;
 }
 .border-t-4 {
     border-top-width: 4px;
 }
+
+/* Theme colours */
 .border-green-500 {
     --tw-border-opacity: 1;
-    border-color: rgb(34 197 94 / var(--tw-border-opacity));
+    border-color: rgb(87 162 152 / var(--tw-border-opacity));
 }
-.border-pink-500 {
-    --tw-border-opacity: 1;
-    border-color: rgb(236 72 153 / var(--tw-border-opacity));
-}
-.bg-green-100 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(220 252 231 / var(--tw-bg-opacity));
-}
-.bg-pink-100 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(252 231 243 / var(--tw-bg-opacity));
-}
+
 .bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.px-6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
+
+/* Padding */
 .py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -547,6 +521,25 @@ video {
 .py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+}
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
 }
 .font-sans {
     font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
@@ -568,8 +561,7 @@ video {
     color: rgb(22 163 74 / var(--tw-text-opacity));
 }
 .text-red-500 {
-    --tw-text-opacity: 1;
-    color: rgb(239 68 68 / var(--tw-text-opacity));
+    color: #e67878;
 }
 
 /* Display */
@@ -679,13 +671,21 @@ video {
     padding-right: 1.5rem;
 }
 
+.pr-6 {
+    padding-right: 1.5rem;
+}
+
+.pr-8 {
+    padding-right: 1.75rem;
+}
+
 /* Text styles */
 .font-semibold {
     font-weight: 600;
 }
 
 .text-gray-700 {
-    color: #4b5563; /* Equivalent to gray-700 in Tailwind */
+    color: #14213d;
 }
 
 /* Buttons */
@@ -699,16 +699,20 @@ video {
     padding-right: 1rem;
 }
 
-.bg-blue-500 {
-    background-color: #3b82f6; /* Equivalent to blue-500 in Tailwind */
+.bg-gray-500 {
+    background-color: #6b818c;
 }
 
 .bg-red-500 {
-    background-color: #dc2626; /* Equivalent to red-500 in Tailwind */
+    background-color: #df5656;
 }
 
 .bg-green-500 {
-    background-color: #10b981; /* Equivalent to green-500 in Tailwind */
+    background-color: #57a298;
+}
+
+.bg-blue-500 {
+    background-color: #d8e4ff;
 }
 
 .text-white {
@@ -807,20 +811,6 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 abbr:where([title]) {
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
-}
-
-/*
-Remove the default font size and weight for headings.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: inherit;
-    font-weight: inherit;
 }
 
 /*
@@ -1366,20 +1356,6 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 abbr:where([title]) {
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
-}
-
-/*
-Remove the default font size and weight for headings.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: inherit;
-    font-weight: inherit;
 }
 
 /*
