@@ -521,6 +521,9 @@ video {
 .items-center {
     align-items: center;
 }
+.justify-center {
+    justify-content: center;
+}
 .grid {
     display: grid;
 }
@@ -707,6 +710,9 @@ video {
 }
 .mt-2 {
     margin-right: 0.5rem;
+}
+.m-4 {
+    margin: 1rem;
 }
 .m-6 {
     margin: 1rem;
