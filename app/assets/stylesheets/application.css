@@ -518,6 +518,9 @@ video {
 .inline-flex {
     display: inline-flex;
 }
+.items-center {
+    align-items: center;
+}
 .grid {
     display: grid;
 }
@@ -569,6 +572,9 @@ video {
 }
 .flex-no-wrap {
     flex-wrap: nowrap;
+}
+.flex-col {
+    flex-direction: column;
 }
 
 /* Card */
