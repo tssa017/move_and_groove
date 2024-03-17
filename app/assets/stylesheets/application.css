@@ -705,15 +705,9 @@ video {
 .mr-2 {
     margin-right: 0.5rem;
 }
-.ml-2 {
-    margin-right: 0.5rem;
-}
-.mt-2 {
-    margin-right: 0.5rem;
-}
 .m-4 {
     margin: 1rem;
 }
-.m-6 {
-    margin: 1rem;
+.mt-4 {
+    margin-top: 1rem;
 }
