@@ -25,11 +25,6 @@ module.exports = {
     ],
     purge: {
         content: ['./../app/views/**/*.html.erb'],
-        safelist: [
-            'bg-blue-500',
-            'text-center',
-            'hover:opacity-100',
-            'lg:text-right',
-        ],
+        safelist: ['bg-green-500'],
     },
 };

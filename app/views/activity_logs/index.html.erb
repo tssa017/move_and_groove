@@ -1,5 +1,8 @@
 <h2 class="py-4 px-6 font-semibold">Welcome <%= current_user.first_name %></h2>
-<h3 class="py-4 px-6 font-semibold">My activities</h3>
+<div class="inline-flex px-6">
+  <img src="/logo-sans-txt.png" alt="Move and Groove logo without text" class="pr-4">
+  <h3 class="font-semibold">My activities</h3>
+</div>
 
 <ul class="py-4 px-6">
   <% @activity_logs.each do |activity_log| %>
