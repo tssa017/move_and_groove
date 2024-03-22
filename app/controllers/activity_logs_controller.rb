@@ -32,8 +32,14 @@ class ActivityLogsController < ApplicationController
   end
 
   def destroy
-    @activity_log.destroy
-    redirect_to root_path, notice: 'Activity log deleted successfully.'
+    @activity_log = ActivityLog.find(params[:id])
+    logger.info "Deleting activity log with ID: #{params[:id]}"
+
+    if @activity_log.destroy
+      redirect_to root_path, notice: 'Activity log deleted successfully.'
+    else
+      redirect_to root_path, alert: 'Failed to delete activity log.'
+    end
   end
 
   private
