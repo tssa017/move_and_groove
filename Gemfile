@@ -60,6 +60,8 @@ group :development do
   # gem "spring"
 end
 
+gem 'rails_12factor', group: :production
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
