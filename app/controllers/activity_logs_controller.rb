@@ -33,7 +33,7 @@ class ActivityLogsController < ApplicationController
 
   def destroy
     @activity_log.destroy
-    redirect_to activity_logs_path, notice: 'Activity log deleted successfully.'
+    redirect_to root_path, notice: 'Activity log deleted successfully.'
   end
 
   private

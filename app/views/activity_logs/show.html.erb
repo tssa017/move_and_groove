@@ -1,21 +1,20 @@
-<h1>Activity Log Details</h1>
+<h1 class='px-6 py-6'><%= @activity_log.activity.title %></h1>
 
-<% if @activity_log.activity.present? %>
-<strong>Title:</strong> <%= @activity_log.activity.title %><br>
-<% else %>
-<strong>Title:</strong> No associated activity<br>
-<% end %>
-<p><strong>Date:</strong> <%= @activity_log.date %></p>
-<p><strong>Duration:</strong> <%= @activity_log.duration %> minutes</p>
-<p><strong>Repetitions:</strong> <%= @activity_log.repetitions %></p>
-<p><strong>Notes:</strong> <%= @activity_log.notes %></p>
+<div class='px-6'>
+  <p><strong>Date:</strong> <%= @activity_log.date %></p>
+  <p><strong>Duration:</strong> <%= @activity_log.duration %> minutes</p>
+  <p><strong>Repetitions:</strong> <%= @activity_log.repetitions %></p>
+  <p><strong>Notes:</strong> <%= @activity_log.notes %></p>
+</div><br>
 
-<ul>
-  <li><%= link_to "Edit", edit_activity_log_path(@activity_log) %></li>
-  <li><%= link_to "Destroy", activity_log_path(@activity_log), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
+<div class='pb-12 px-6'>
+  <ul>
+    <li><%= link_to 'Edit', edit_activity_log_path(@activity_log), class: 'py-2 px-4 bg-light-green rounded-md font-semibold' %></li><br>
+    <li><%= link_to 'Delete', activity_log_path(@activity_log), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: 'Are you sure?', 
+                    }, class: 'py-2 px-4 bg-red-500 rounded-md font-semibold' %></li><br>
+  </ul>
 
-<%= link_to "Back", root_path %>
+  <%= link_to 'Back', root_path, class: 'py-2 px-4 bg-blue-500 rounded-md font-semibold' %>
+</div>

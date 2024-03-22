@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   get 'user_info', to: 'user_info#show'
 
-  resources :activity_logs 
+  resources :activity_logs do
+  end
 
   resources :activities do
     get 'get_activity_type', on: :member

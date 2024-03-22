@@ -1,37 +1,39 @@
-<%= form_with model: @activity_log, url: activity_logs_path, method: :post do |form| %>
-  <%= form.label :activity_id, "Activity Type" %>
-  <%= form.select :activity_id, 
-                 Activity.pluck(:title, :id, :is_duration_based).map { |title, id, is_duration_based| [title, id, { 'data-is-duration-based': is_duration_based }] },
-                 { prompt: 'Select activity' },
-                 { id: "activity-select", required: true, autofocus: true, tabindex: '1' } %>
+<div class='px-6 py-6'>
+  <%= form_with model: @activity_log, url: activity_logs_path, method: :post do |form| %>
+    <%= form.label :activity_id, 'Activity Type' %>
+    <%= form.select :activity_id, 
+                  Activity.pluck(:title, :id, :is_duration_based).map { |title, id, is_duration_based| [title, id, { 'data-is-duration-based': is_duration_based }] },
+                  { prompt: 'Select activity' },
+                  { id: 'activity-select', required: true, autofocus: true, tabindex: '1', class: 'input-border' } %>
 
-  <div id="duration-field" style="display: none;">
-    <%= form.label :duration, "Duration (minutes)" %>
-    <%= form.number_field :duration, min: 0, step: 1, tabindex: '2' %>
-  </div>
+    <div id='duration-field' style='display: none;'>
+      <%= form.label :duration, 'Duration (minutes)' %>
+      <%= form.number_field :duration, min: 0, step: 1, tabindex: '2', class: 'input-border' %>
+    </div>
 
-  <div id="reps-field" style="display: none;">
-    <%= form.label :repetitions, "Number of Reps" %>
-    <%= form.number_field :repetitions, min: 0, step: 1, tabindex: '3' %>
-  </div>
+    <div id='reps-field' style='display: none;'>
+      <%= form.label :repetitions, 'Number of Reps' %>
+      <%= form.number_field :repetitions, min: 0, step: 1, tabindex: '3', class: 'input-border' %>
+    </div>
 
-  <%= form.label :date %>
-  <%= form.date_field :date, required: true, tabindex: '4' %>
+    <%= form.label :date %>
+    <%= form.date_field :date, required: true, tabindex: '4', class: 'input-border' %>
 
-  <%= form.label :notes %>
-  <%= form.text_field :notes, tabindex: '5' %>
-  
-  <%= form.submit "Post Activity", tabindex: '6' %>
-<% end %>
+    <%= form.label :notes %>
+    <%= form.text_field :notes, tabindex: '5', class: 'input-border' %><br><br><br>
+    
+    <%= form.submit 'Post Activity', tabindex: '6', class: 'py-2 px-4 bg-light-green rounded-md font-semibold' %>
+  <% end %>
+</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const activitySelect = document.getElementById('activity-select');
     const durationField = document.getElementById('duration-field');
     const repsField = document.getElementById('reps-field');
-    const dateField = document.querySelector('input[type="date"]');
-    const notesField = document.querySelector('input[name="activity_log[notes]"]');
-    const submitButton = document.querySelector('input[type="submit"]');
+    const dateField = document.querySelector('input[type='date']');
+    const notesField = document.querySelector('input[name='activity_log[notes]']');
+    const submitButton = document.querySelector('input[type='submit']');
 
     activitySelect.addEventListener('change', function() {
       const selectedOption = activitySelect.options[activitySelect.selectedIndex];

@@ -1,13 +1,18 @@
-<h2 class="py-4 px-6 font-semibold">Welcome, <%= current_user.first_name %>!</h2>
-<div class="flex items-center px-6"> 
-  <img src="/logo-sans-txt.png" alt="Move and Groove logo without text" class="pr-4">
-  <h3 class="font-semibold">My activities</h3>
-  <%= link_to "Log new activity", new_activity_log_path, class: "m-4 py-4 px-6 font-semibold bg-light-green rounded-md hover:bg-green-600" %>
+<div class='bg-light-blue border-divider py-6'>
+  <h2 class='py-4 px-6 font-semibold'>Welcome, <%= current_user.first_name %>!</h2>
+  <h3 class='pb-6 px-6'>What will you conquer today? 🤸</h3>
 </div>
 
-<div class="flex flex-wrap justify-center py-4 px-6"> 
+
+<div class='flex items-center px-6 mt-4'> 
+  <img src='/logo-sans-txt.png' alt='Move and Groove logo without text' class='pr-4'>
+  <h3 class='font-semibold'>My activities</h3>
+  <%= link_to 'Log new activity', new_activity_log_path, class: 'm-4 py-4 px-6 font-semibold bg-light-green rounded-md hover:bg-green-600' %>
+</div>
+
+<div class='flex flex-wrap justify-center py-4 px-6'> 
   <% @activity_logs.each do |activity_log| %>
-    <div class="w-64 bg-white rounded-lg shadow-md p-6 m-4"> 
+    <div class='w-64 bg-white rounded-lg shadow-md p-6 m-4'> 
       <% if activity_log.activity.present? %>
         <strong><%= activity_log.activity.title %></strong><br>
       <% else %>
@@ -20,9 +25,9 @@
         <strong>Number of Reps:</strong> <%= activity_log.repetitions %><br>
       <% end %>
       <strong>Notes:</strong> <%= activity_log.notes %><br>
-      <div class="mt-4">
-        <%= link_to "Edit", edit_activity_log_path(activity_log), class: "mr-2 py-2 px-4 bg-light-green rounded-md font-semibold hover:bg-blue-600" %>
-        <%= link_to "Delete", activity_log_path(activity_log), method: :delete, data: { confirm: "Are you sure you want to delete this activity log?" }, class: "mr-2 py-2 px-4 bg-red-500 rounded-md font-semibold hover:bg-red-600" %>
+      <div class='mt-4'>
+        <%= link_to 'Edit', edit_activity_log_path(activity_log), class: 'mr-2 py-2 px-4 bg-light-green rounded-md font-semibold' %>
+        <%= link_to 'View', activity_log_path(activity_log), class: 'mr-2 py-2 px-4 bg-blue-500 rounded-md font-semibold' %>
       </div>
     </div>
   <% end %>

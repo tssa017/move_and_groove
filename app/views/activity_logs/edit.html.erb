@@ -1,36 +1,38 @@
-<h1>Edit Activity Log</h1>
+<h1 class='py-4 px-6 font-semibold'>Edit your activity!</h1>
 
-<%= form_with(model: @activity_log, local: true) do |form| %>
-  <% if @activity_log.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@activity_log.errors.count, "error") %> prohibited this activity log from being saved:</h2>
+<div class='pb-12 px-6'>
+  <%= form_with(model: @activity_log, local: true) do |form| %>
+    <% if @activity_log.errors.any? %>
+      <div id='error_explanation'>
+        <h2><%= pluralize(@activity_log.errors.count, 'error') %> prohibited this activity log from being saved:</h2>
 
-      <ul>
-      <% @activity_log.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @activity_log.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class='field py-4 font-semibold'>
+      <%= form.label :duration %><br>
+      <%= form.text_field :duration, autofocus: true, tabindex: '1', class: 'input-border'  %>
+    </div>
+
+    <div class='field py-4 font-semibold'>
+      <%= form.label :repetitions %><br>
+      <%= form.text_field :repetitions, tabindex: '2', class: 'input-border' %>
+    </div>
+
+    <div class='field py-4 font-semibold'>
+      <%= form.label :notes %><br>
+      <%= form.text_area :notes, tabindex: '3', class: 'input-border' %>
+    </div>
+
+    <div class='actions py-4'>
+      <%= form.submit 'Update', tabindex: '4', class: 'py-2 px-4 bg-light-green rounded-md font-semibold' %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :duration %>
-    <%= form.text_field :duration, autofocus: true, tabindex: '1'  %>
-  </div>
-
-  <div class="field">
-    <%= form.label :repetitions %>
-    <%= form.text_field :repetitions, tabindex: '2' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :notes %>
-    <%= form.text_area :notes, tabindex: '3' %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Update Activity Log', tabindex: '4' %>
-  </div>
-<% end %>
-
-<%= link_to 'Cancel', root_path %>
+  <%= link_to 'Cancel', root_path, class: 'py-2 px-4 bg-red-500 rounded-md font-semibold' %>
+</div>

@@ -1,15 +1,15 @@
-<h1 class="px-6 py-6">Profile info</h1>
-<div class="flex flex-col"> 
+<h1 class='px-6 py-6'>Profile info</h1>
+<div class='flex flex-col'> 
     <ul>
-        <li class="px-6 pb-3"><strong>Email:</strong> <%= @user.email %></li>
-        <li class="px-6 pb-3"><strong>First Name:</strong> <%= @user.first_name %></li>
-        <li class="px-6 pb-3"><strong>Last Name:</strong> <%= @user.last_name %></li>
-        <li class="px-6 pb-3"><strong>Age:</strong> <%= @user.age %></li>
-        <li class="px-6 pb-6"><strong>Weight:</strong> <%= @user.weight %></li>
+        <li class='px-6 pb-3'><strong>Email:</strong> <%= @user.email %></li>
+        <li class='px-6 pb-3'><strong>First Name:</strong> <%= @user.first_name %></li>
+        <li class='px-6 pb-3'><strong>Last Name:</strong> <%= @user.last_name %></li>
+        <li class='px-6 pb-3'><strong>Age:</strong> <%= @user.age %></li>
+        <li class='px-6 pb-6'><strong>Weight:</strong> <%= @user.weight %></li>
     </ul>
     <% if user_signed_in? %>
-        <div class="py-6 pb-12 px-6">
-            <%= link_to 'Edit Profile', edit_user_registration_path, class: 'py-4 px-4 font-semibold bg-light-green rounded-md'%>
+        <div class='py-6 pb-12 px-6'>
+            <%= link_to 'Edit profile', edit_user_registration_path, class: 'py-4 px-4 font-semibold bg-light-green rounded-md'%>
         </div>
     <% end %>
 </div>
