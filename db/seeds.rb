@@ -15,8 +15,8 @@ activities = [
   { title: "Skiing", is_duration_based: true },
   { title: "Snowboarding", is_duration_based: true },
   { title: "Skateboarding", is_duration_based: true },
-  { title: "Tennis", is_duration_based: false },
-  { title: "Ballet", is_duration_based: false },
+  { title: "Tennis", is_duration_based: true },
+  { title: "Ballet", is_duration_based: true },
   { title: "Biking", is_duration_based: true },
   { title: "Weight lifting", is_duration_based: false }
 ]
