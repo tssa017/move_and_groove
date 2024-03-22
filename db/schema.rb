@@ -10,21 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_17_133641) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_22_152525) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.integer "activity_id"
     t.string "title", limit: 45
-    t.string "img", limit: 455
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_duration_based"
   end
 
   create_table "activity_logs", force: :cascade do |t|
-    t.integer "activity_log_id"
     t.datetime "date", precision: nil
     t.float "duration"
     t.integer "calories_consumed"
@@ -34,8 +31,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_17_133641) do
     t.bigint "user_id", null: false
     t.bigint "activity_id"
     t.integer "repetitions"
-    t.index ["activity_id"], name: "index_activity_logs_on_activity_id"
-    t.index ["activity_log_id"], name: "index_activity_logs_on_activity_log_id", unique: true
     t.index ["user_id"], name: "index_activity_logs_on_user_id"
   end
 

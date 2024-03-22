@@ -6,16 +6,13 @@ Rails.application.routes.draw do
 
   get 'user_info', to: 'user_info#show'
 
-  resources :activity_logs do
-  end
+  resources :activity_logs
 
   resources :activities do
     get 'get_activity_type', on: :member
   end
 
-  # Route to about page
+  # Custom routes for static pages
   get 'about', to: 'about#index'
-
-  # Route to media page
   get 'media', to: 'media#index'
 end

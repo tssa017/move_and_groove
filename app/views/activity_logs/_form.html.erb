@@ -31,27 +31,14 @@
     const activitySelect = document.getElementById('activity-select');
     const durationField = document.getElementById('duration-field');
     const repsField = document.getElementById('reps-field');
-    const dateField = document.querySelector('input[type='date']');
-    const notesField = document.querySelector('input[name='activity_log[notes]']');
-    const submitButton = document.querySelector('input[type='submit']');
+    const dateField = document.querySelector('input[type="date"]');
+    const notesField = document.querySelector('input[name="activity_log[notes]"]');
+    const submitButton = document.querySelector('input[type="submit"]');
 
-    activitySelect.addEventListener('change', function() {
-      const selectedOption = activitySelect.options[activitySelect.selectedIndex];
-      const isDurationBased = selectedOption.getAttribute('data-is-duration-based');
-      if (isDurationBased === 'true') {
-        durationField.style.display = 'block';
-        repsField.style.display = 'none';
-        durationField.querySelector('input').focus();
-      } else if (isDurationBased === 'false') {
-        durationField.style.display = 'none';
-        repsField.style.display = 'block';
-        repsField.querySelector('input').focus();
-      }
-    });
-
-    activitySelect.addEventListener('keydown', function(e) {
-      if (e.key === 'Tab' && activitySelect.value !== '') {
-        const isDurationBased = activitySelect.options[activitySelect.selectedIndex].getAttribute('data-is-duration-based');
+    if (activitySelect && durationField && repsField && dateField && notesField && submitButton) {
+      activitySelect.addEventListener('change', function() {
+        const selectedOption = activitySelect.options[activitySelect.selectedIndex];
+        const isDurationBased = selectedOption.getAttribute('data-is-duration-based');
         if (isDurationBased === 'true') {
           durationField.style.display = 'block';
           repsField.style.display = 'none';
@@ -61,32 +48,47 @@
           repsField.style.display = 'block';
           repsField.querySelector('input').focus();
         }
-      }
-    });
+      });
 
-    durationField.querySelector('input').addEventListener('keydown', function(e) {
-      if (e.key === 'Tab' && durationField.querySelector('input').value !== '') {
-        repsField.style.display = 'block';
-        repsField.querySelector('input').focus();
-      }
-    });
+      activitySelect.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab' && activitySelect.value !== '') {
+          const isDurationBased = activitySelect.options[activitySelect.selectedIndex].getAttribute('data-is-duration-based');
+          if (isDurationBased === 'true') {
+            durationField.style.display = 'block';
+            repsField.style.display = 'none';
+            durationField.querySelector('input').focus();
+          } else if (isDurationBased === 'false') {
+            durationField.style.display = 'none';
+            repsField.style.display = 'block';
+            repsField.querySelector('input').focus();
+          }
+        }
+      });
 
-    repsField.querySelector('input').addEventListener('keydown', function(e) {
-      if (e.key === 'Tab' && repsField.querySelector('input').value !== '') {
-        dateField.focus();
-      }
-    });
+      durationField.querySelector('input').addEventListener('keydown', function(e) {
+        if (e.key === 'Tab' && durationField.querySelector('input').value !== '') {
+          repsField.style.display = 'block';
+          repsField.querySelector('input').focus();
+        }
+      });
 
-    dateField.addEventListener('keydown', function(e) {
-      if (e.key === 'Tab') {
-        notesField.focus();
-      }
-    });
+      repsField.querySelector('input').addEventListener('keydown', function(e) {
+        if (e.key === 'Tab' && repsField.querySelector('input').value !== '') {
+          dateField.focus();
+        }
+      });
 
-    notesField.addEventListener('keydown', function(e) {
-      if (e.key === 'Tab') {
-        submitButton.focus();
-      }
-    });
+      dateField.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          notesField.focus();
+        }
+      });
+
+      notesField.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          submitButton.focus();
+        }
+      });
+    }
   });
 </script>
