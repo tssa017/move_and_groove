@@ -47,7 +47,7 @@ rails server
 
 ## Configuration
 
-Ensure you have the following environment variables set:
+Ensure you have the following environment variables set in a `config/.env` file:
 
 -   `DB_NAME`
 -   `DB_USER`
