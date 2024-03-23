@@ -8,9 +8,9 @@
 /.bundle
 
 # Ignore all environment files (except templates).
-/.env*
-!/.env*.erb
-!/config/.env*
+.env*
+!.env*.erb
+config/.env*
 
 # Ignore all logfiles and tempfiles.
 /log/*
