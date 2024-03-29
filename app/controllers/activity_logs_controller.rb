@@ -31,9 +31,15 @@ class ActivityLogsController < ApplicationController
     end
   end
 
+  def is_duration_based
+    # Define your logic here to determine if the activity is duration based or not
+    # For example, if the activity has a duration but no repetitions, it might be duration-based
+    # You should adjust this logic based on your specific requirements
+    duration.present? && repetitions.blank?
+  end
+
   def destroy
     @activity_log = ActivityLog.find(params[:id])
-    logger.info "Deleting activity log with ID: #{params[:id]}"
 
     if @activity_log.destroy
       redirect_to root_path, notice: 'Activity log deleted successfully.'

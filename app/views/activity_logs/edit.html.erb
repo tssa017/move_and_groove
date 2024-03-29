@@ -14,15 +14,17 @@
       </div>
     <% end %>
 
-    <div class='field py-4 font-semibold'>
-      <%= form.label :duration %><br>
-      <%= form.text_field :duration, autofocus: true, tabindex: '1', class: 'input-border'  %>
-    </div>
-
-    <div class='field py-4 font-semibold'>
-      <%= form.label :repetitions %><br>
-      <%= form.text_field :repetitions, tabindex: '2', class: 'input-border' %>
-    </div>
+    <% if @activity_log.repetitions.nil? %>
+      <div class='field py-4 font-semibold'>
+        <%= form.label :duration %><br>
+        <%= form.text_field :duration, autofocus: true, tabindex: '1', class: 'input-border'  %>
+      </div>
+    <% else %>
+      <div class='field py-4 font-semibold'>
+        <%= form.label :repetitions %><br>
+        <%= form.text_field :repetitions, tabindex: '1', class: 'input-border' %>
+      </div>
+    <% end %>
 
     <div class='field py-4 font-semibold'>
       <%= form.label :notes %><br>
