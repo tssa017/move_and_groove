@@ -339,6 +339,10 @@ button,
     cursor: pointer;
 }
 
+hover-pointer {
+    cursor: pointer;
+}
+
 /*
 Make sure disabled buttons don't get the pointer cursor.
 */
@@ -633,6 +637,21 @@ video {
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
+/* Padding for header in small screens */
+.sm\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+/* Larger padding for footer in small screens */
+.sm\:py-8 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+/* Larger padding for header in small screens */
+.sm\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
 .py-14 {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
@@ -657,6 +676,10 @@ video {
 }
 .pr-8 {
     padding-right: 1.75rem;
+}
+/* Larger right padding for menu items in small screens */
+.sm\:pr-8 {
+    padding-right: 2rem;
 }
 .pb-3 {
     padding-bottom: 0.75rem;
@@ -724,6 +747,10 @@ video {
 }
 .mr-2 {
     margin-right: 0.5rem;
+}
+/* Larger right margin for small screens */
+.sm\:mr-6 {
+    margin-right: 1.5rem; /* Adjust as needed */
 }
 .m-4 {
     margin: 1rem;
