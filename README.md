@@ -2,7 +2,7 @@
 
 Move and Groove is a fitness tracking app that allows users to sign up and monitor their progress towards fitness goals by logging their activities 🏊‍♀️
 
-I designed and built this full-stack application as project 6 for the OpenClassrooms Full Stack Developer path. For the back-end I use Ruby on Rails with Devise for authentication. For the front-end I use Tailwind CSS.
+I designed and built this full-stack application as project 6 for the OpenClassrooms Full Stack Developer path. For the back-end I use Ruby on Rails with Devise for authentication and PostgreSQL for the database. For the front-end I use Tailwind CSS.
 
 ## Features
 
@@ -116,9 +116,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_152525) do
 end
 ```
 
-Enjoy the platform! 🚀
-
-### Resources
+## Resources
 
 -   [Rails docs](https://guides.rubyonrails.org/)
--   [Project descriptiom](https://openclassrooms.com/fr/paths/509/projects/241/assignment)
+-   [Project description](https://openclassrooms.com/fr/paths/509/projects/241/assignment)
+
+Enjoy the platform! 🚀
